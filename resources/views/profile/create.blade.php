@@ -16,7 +16,7 @@
                         <span class="card-title">Create Profile</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{url('profiles')}}" role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('profiles.store')}}" role="form" enctype="multipart/form-data">
                             @csrf
 
                             <div class="box box-info padding-1">

@@ -92,7 +92,7 @@ class ProfileController extends Controller
             'co_pro_id' => $ct->id,
         ]);
 
-        return redirect()->to('profiles')
+        return redirect()->route('profiles.index')
         ->with('success', 'Empleado creado exitosamente!');
     }
 
@@ -163,7 +163,7 @@ class ProfileController extends Controller
             'tipo' => $request->tipo,
         ]);
 
-        return redirect()->to('profiles')
+        return redirect()->route('profiles.index')
         ->with('success', 'Se guardaron los datos correctamente!');
     }
 
@@ -179,7 +179,7 @@ class ProfileController extends Controller
         $profile->businessprofile()->delete();
         $profile->delete();
 
-        return redirect()->to('profiles')
+        return redirect()->route('profiles.index')
         ->with('success', 'Empleado eliminado correctamente!');
     }
 }

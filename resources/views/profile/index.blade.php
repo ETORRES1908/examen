@@ -22,7 +22,7 @@
             </div>
             <div class="col-6">
 
-                <form action="{{ url('profiles') }}" method="get">
+                <form action="{{ route('profiles.index') }}" method="get">
                     <div class="d-md-flex justify-content-md-end">
                         <div class="btn-group">
                             <input type="date" class="form-control" name="from" id="from"
@@ -47,7 +47,7 @@
                             </span>
 
                             <div class="float-right">
-                                <a href="{{ url('profiles/create') }}" class="btn btn-primary btn-sm float-right"
+                                <a href="{{ route('profiles.create') }}" class="btn btn-primary btn-sm float-right"
                                     data-placement="left">
                                     {{ __('Crear Nuevo Empleado') }}
                                 </a>
@@ -111,12 +111,12 @@
 
                                             </td>
                                             <td>
-                                                <form action="{{ url('profiles', $profile->id) }}" method="POST">
+                                                <form action="{{ route('profiles.delete', $profile->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary "
-                                                        href="{{ url('profiles', $profile->id) }}"><i
+                                                        href="{{ route('profiles.show', $profile->id) }}"><i
                                                             class="fa fa-fw fa-eye"></i> Ver</a>
                                                     <a class="btn btn-sm btn-success"
-                                                        href="{{ url('profiles/' . $profile->id . '/edit') }}"><i
+                                                        href="{{ route('profiles.edit', $profile->id) }}"><i
                                                             class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
